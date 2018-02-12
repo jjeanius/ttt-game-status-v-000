@@ -24,8 +24,8 @@ def won?(board)
       position_3 = board[combo[2]]
       position_1 == "X" && position_2 == "X" && position_3 == "X" ||
       position_1 == "O" && position_2 == "O" && position_3 == "O"
-      end
     end
+end
 
 def full?(board)
   board.all? do |index|
@@ -39,23 +39,11 @@ end
 
 def over?(board)
   full?(board) || won?(board) || draw?(board)
-
-
 end
 
 def winner(board)
-if won?(board)
-  win_index = won?(board)[0]
-  board[win_index]
-end
-
-
-  #board.each do |combo|
-  #  winner_1 = [board[combo[0]],board[combo[4]],board[combo[8]],]
-  #  winner_2 = [board[combo[1]],board[combo[4]],board[combo[7]],]
-  #  board ==  winner_1 = "X" || winner_2 = "O" || nil
-#
-#  end
-
-
+  if won?(board)
+    win_index = won?(board)[0]
+    board[win_index]
+  end
 end
